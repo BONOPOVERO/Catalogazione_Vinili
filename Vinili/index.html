@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivio Vinili</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>La Mia Collezione</h1>
+        <p id="user-info">Email: lorenzopbona@gmail.com</p>
+        
+        <div class="filter-bar">
+            <button onclick="filterVinyls('all')">Tutti</button>
+            <button onclick="filterVinyls('Personale')">Personali</button>
+            <button onclick="filterVinyls('Wishlist')">Wishlist</button>
+            <button onclick="filterVinyls('Posseduto')">Posseduto</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="vinyl-grid" class="grid-container">
+            <p id="loading">Caricamento database in corso...</p>
+        </div>
+    </main>
+
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetails()">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
