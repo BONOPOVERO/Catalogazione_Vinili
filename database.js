@@ -771,7 +771,7 @@ DATABASE_VINILI = [
     "foto_album": []
   },
     {
-    "id": 30,
+    "id": 23,
     "artista": "Guns N' Roses",
     "titolo_album": "Use Your Illusion II",
     "genere": "Hard Rock",
