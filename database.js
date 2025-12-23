@@ -1420,7 +1420,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Vinile colorato, edizione limitata scandinava",
     "stato_catalogo": "Personale",
-    "cover": "Img/Skeleta.jpg",
+    "cover": "Img/Skeletà.webp",
     "tracce": [
       {"pos": "A1", "title": "Imperium", "duration": "1:40"},
       {"pos": "A2", "title": "Kaisarion", "duration": "5:02"},
