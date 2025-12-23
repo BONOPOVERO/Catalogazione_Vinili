@@ -508,7 +508,7 @@ DATABASE_VINILI = [
     "note_stato": "Prezzo etichetta 26,00€",
     "stato_catalogo": "Personale",
     "cover": "Img/Live_On_Air_1974-79.jpg",
-    "tracce": "??",
+    "tracce": [],
     "foto_album": ["Img/Hells_Highway_Foto/Fronte.jpg"]
   },
   {
@@ -565,7 +565,7 @@ DATABASE_VINILI = [
     "note_stato": "Black and White cover art",
     "stato_catalogo": "Personale",
     "cover": "Img/Nazarene_Sickness.jpg",
-    "tracce": "??",
+    "tracce": [],
     "foto_album": ["Img/Nazarene_Sickness_Foto/Fronte.jpg"]
   },
 
