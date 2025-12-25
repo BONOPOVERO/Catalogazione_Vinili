@@ -1480,7 +1480,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Led_Zeppelin_I.jpg",
     "tracce": [],
     "foto_album": []
@@ -1504,7 +1504,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Led_Zeppelin_II.jpg",
     "tracce": [],
     "foto_album": []
@@ -1528,7 +1528,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Led_Zeppelin_III.jpg",
     "tracce": [],
     "foto_album": []
@@ -1552,7 +1552,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Pilot_Talk_Trilogy.jpg",
     "tracce": [],
     "foto_album": []
@@ -1600,7 +1600,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Let_There_Be_Rock.jpg",
     "tracce": [],
     "foto_album": []
@@ -1624,8 +1624,8 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
-    "cover": "Img/Layla.jpg",
+    "stato_catalogo": "Wishlist",
+    "cover": "Img/Layla_And_Other_Assorted_Love_Songs.jpg",
     "tracce": [],
     "foto_album": []
   },
@@ -1648,7 +1648,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/The_Slow_Rush.jpg",
     "tracce": [],
     "foto_album": []
@@ -1672,7 +1672,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Deadbeat.jpg",
     "tracce": [],
     "foto_album": []
@@ -1696,7 +1696,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Out_Of_Time.jpg",
     "tracce": [],
     "foto_album": []
@@ -1720,7 +1720,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Dirt.jpg",
     "tracce": [],
     "foto_album": []
@@ -1744,8 +1744,8 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
-    "cover": "Img/Grrr.jpg",
+    "stato_catalogo": "Wishlist",
+    "cover": "Img/Grrr!.jpg",
     "tracce": [],
     "foto_album": []
   },
@@ -1768,7 +1768,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Mind_Games.jpg",
     "tracce": [],
     "foto_album": []
@@ -1792,7 +1792,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Abbey_Road.jpg",
     "tracce": [],
     "foto_album": []
@@ -1816,7 +1816,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/The_Division_Bell.jpg",
     "tracce": [],
     "foto_album": []
@@ -1840,7 +1840,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Beatles_1967-1970.jpg",
     "tracce": [],
     "foto_album": []
@@ -1864,7 +1864,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Let_It_Be.jpg",
     "tracce": [],
     "foto_album": []
@@ -1888,8 +1888,8 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
-    "cover": "Img/Time_Flies.jpg",
+    "stato_catalogo": "Wishlist",
+    "cover": "Img/Time_Flies_1994_2009.jpg",
     "tracce": [],
     "foto_album": []
   },
@@ -1912,7 +1912,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/In_Your_Honor.jpg",
     "tracce": [],
     "foto_album": []
@@ -1936,7 +1936,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Dr_Feelgood.jpg",
     "tracce": [],
     "foto_album": []
