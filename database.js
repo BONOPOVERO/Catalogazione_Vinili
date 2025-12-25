@@ -1576,7 +1576,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/Eye_In_The_Sky.jpg",
     "tracce": [],
     "foto_album": []
