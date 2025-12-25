@@ -1456,7 +1456,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Personale",
+    "stato_catalogo": "Wishlist",
     "cover": "Img/London_Calling.jpg",
     "tracce": [],
     "foto_album": []
