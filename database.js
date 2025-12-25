@@ -1673,7 +1673,7 @@ DATABASE_VINILI = [
     "stato_copertina": "??",
     "note_stato": "",
     "stato_catalogo": "Wishlist",
-    "cover": "Img/Deadbeat.jpg",
+    "cover": "Img/Deadbeat.jpeg",
     "tracce": [],
     "foto_album": []
   },
@@ -1841,7 +1841,7 @@ DATABASE_VINILI = [
     "stato_copertina": "??",
     "note_stato": "",
     "stato_catalogo": "Wishlist",
-    "cover": "Img/Beatles_1967-1970.jpg",
+    "cover": "Img/Beatles_1967_1970.jpg",
     "tracce": [],
     "foto_album": []
   },
