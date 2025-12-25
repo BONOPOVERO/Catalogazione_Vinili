@@ -1841,7 +1841,7 @@ DATABASE_VINILI = [
     "stato_copertina": "??",
     "note_stato": "",
     "stato_catalogo": "Wishlist",
-    "cover": "Img/Beatles_1967_1970.jpg",
+    "cover": "Img/The_Beatles_1967_1970.jpg",
     "tracce": [],
     "foto_album": []
   },
