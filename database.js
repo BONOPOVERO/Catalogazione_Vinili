@@ -1655,7 +1655,7 @@ DATABASE_VINILI = [
   },
   {
     "id": 66,
-    "artista": "Deadbeat",
+    "artista": "Tame Impala",
     "titolo_album": "Deadbeat",
     "genere": "Electronic / Dub Techno",
     "anno_uscita_originale": "??",
