@@ -372,7 +372,7 @@ DATABASE_VINILI = [
     "stato_disco": "8",
     "stato_copertina": "5",
     "note_stato": "",
-    "stato_catalogo": "Posseduto",
+    "stato_catalogo": "Eredità",
     "cover": "Img/The_Dark_Side_Of_The_Moon.jpg",
     "tracce": [
       {"pos": "A1", "title": "Speak to Me", "duration": "1:30"},
