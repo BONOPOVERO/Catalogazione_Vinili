@@ -28,6 +28,40 @@ h1 {
 }
 
 /* ==========================================================================
+   BARRA DI RICERCA
+   ========================================================================== */
+.search-container {
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #141424;
+    border: 1px solid #334155;
+    border-radius: 25px;
+    color: #f8fafc;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+#search-input:focus {
+    border-color: #fbbf24;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+    background-color: #1e1e2e;
+}
+
+#search-input::placeholder {
+    color: #64748b;
+}
+
+
+/* ==========================================================================
    BARRA FILTRI
    ========================================================================== */
 .filter-bar {
