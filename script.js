@@ -47,10 +47,18 @@ function renderVinyls(data) {
         card.className = "vinyl-card";
         card.onclick = () => openDetails(v);
         
-        let statusClass = 'wishlist'; 
-        const stato = (v.stato_catalogo || "").toLowerCase();
-        if (stato === 'Personale') statusClass = 'owned-personal';
-        if (stato === 'Eredità') statusClass = 'owned-family';
+        let statusClass = 'wishlist'; // Default: Arancione
+        
+        // Pulisce la stringa da spazi e la rende minuscola per il confronto
+        const stato = (v.stato_catalogo || "").toLowerCase().trim();
+
+        if (stato === 'personale') {
+            statusClass = 'owned-personal'; // Verde
+        } 
+        // Aggiungiamo il controllo anche per "eredità" o "eredita"
+        else if (stato === 'posseduto' || stato === 'eredità' || stato === 'eredita') {
+            statusClass = 'owned-family';   // Blu
+        }
 
         const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
         const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
