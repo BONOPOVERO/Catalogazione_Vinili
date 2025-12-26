@@ -49,8 +49,8 @@ function renderVinyls(data) {
         
         let statusClass = 'wishlist'; 
         const stato = (v.stato_catalogo || "").toLowerCase();
-        if (stato === 'Eredità') statusClass = 'owned-personal';
-        if (stato === 'posseduto') statusClass = 'owned-family';
+        if (stato === 'Personale') statusClass = 'owned-personal';
+        if (stato === 'Eredità') statusClass = 'owned-family';
 
         const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
         const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
