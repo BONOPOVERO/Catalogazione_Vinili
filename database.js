@@ -717,7 +717,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Wishlist",
+    "stato_catalogo": "Personale",
     "cover": "Img/Facelift.jpg",
     "tracce": [],
     "foto_album": []
@@ -741,7 +741,7 @@ DATABASE_VINILI = [
     "stato_disco": "??",
     "stato_copertina": "??",
     "note_stato": "",
-    "stato_catalogo": "Wishlist",
+    "stato_catalogo": "Personale",
     "cover": "Img/Toxicity.jpg",
     "tracce": [],
     "foto_album": []
