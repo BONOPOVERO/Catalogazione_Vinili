@@ -1961,7 +1961,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Live_At_Rainbow_74.jpg",
+    "cover": "Img/Live_At_The_Rainbow_74.jpg",
     "tracce": [
       {"pos": "A1", "title": "Procession", "duration": "1:18"},
       {"pos": "A2", "title": "Now I'm Here", "duration": "4:57"},
@@ -2038,7 +2038,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Finitura Argentata",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_The_Game.jpg",
+    "cover": "Img/The_Game.jpg",
     "tracce": [
       {"pos": "A1", "title": "Play The Game", "duration": "3:30"},
       {"pos": "A2", "title": "Dragon Attack", "duration": "4:18"},
