@@ -2563,7 +2563,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Jazz.jpg",
+    "cover": "Img/Jazz.jpg",
     "tracce": [
       {"pos": "A1", "title": "Mustapha", "duration": "3:01"},
       {"pos": "A2", "title": "Fat Bottomed Girls", "duration": "4:16"},
@@ -2601,7 +2601,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Colonna Sonora",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Flash_Gordon.jpg",
+    "cover": "Img/Flash_Gordon.jpg",
     "tracce": [
       {"pos": "A1", "title": "Flash's Theme", "duration": "3:30"},
       {"pos": "A2", "title": "In The Space Capsule (The Love Theme)", "duration": "2:43"},
@@ -2644,7 +2644,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Live Concert",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Night_At_The_Odeon.jpg",
+    "cover": "Img/A_Night_At_The_Odeon.jpg",
     "tracce": [
       {"pos": "A1", "title": "Now I'm Here", "duration": "4:43"},
       {"pos": "A2", "title": "Ogre Battle", "duration": "5:19"},
@@ -2688,7 +2688,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Bohemian_Rhapsody_OST.jpg",
+    "cover": "Img/Bohemian_Rhapsody.jpg",
     "tracce": [
       {"pos": "A1", "title": "20th Century Fox Fanfare", "duration": "0:25"},
       {"pos": "A2", "title": "Somebody To Love", "duration": "4:56"},
@@ -2735,7 +2735,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Triplo vinile",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_On_Air.jpg",
+    "cover": "Img/On_Air.jpg",
     "tracce": [
       {"pos": "A1", "title": "My Fairy King (Session 1)", "duration": "4:08"},
       {"pos": "A2", "title": "Keep Yourself Alive (Session 1)", "duration": "3:49"},
@@ -2784,7 +2784,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Hot_Space.jpg",
+    "cover": "Img/Hot_Space.jpg",
     "tracce": [
       {"pos": "A1", "title": "Staying Power", "duration": "4:10"},
       {"pos": "A2", "title": "Dancer", "duration": "3:46"},
@@ -2820,7 +2820,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Triplo Vinile, Concerto del 1986",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Live_At_Wembley.jpg",
+    "cover": "Img/Live_At_Wembley_Stadium.jpg",
     "tracce": [
       {"pos": "A1", "title": "One Vision", "duration": "5:50"},
       {"pos": "A2", "title": "Tie Your Mother Down", "duration": "3:52"},
@@ -2873,7 +2873,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Triplo Vinile, Registrato nel 1981",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Rock_Montreal.jpg",
+    "cover": "Img/Rock_Montreal.jpg",
     "tracce": [
       {"pos": "A1", "title": "Intro", "duration": "1:59"},
       {"pos": "A2", "title": "We Will Rock You (Fast)", "duration": "3:06"},
@@ -2926,7 +2926,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Identificato da matrice HKAY 32574 (Lato A). Stampa Italiana.",
     "stato_catalogo": "Eredità",
-    "cover": "",
+    "cover": "Tokyo_Tapes.jpg",
     "tracce": [
       {"pos": "A1", "title": "All Night Long", "duration": "3:44"},
       {"pos": "A2", "title": "Pictured Life", "duration": "3:12"},
