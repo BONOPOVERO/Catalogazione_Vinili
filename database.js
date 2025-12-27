@@ -2905,5 +2905,48 @@ DATABASE_VINILI = [
       {"pos": "F6", "title": "God Save The Queen", "duration": "1:27"}
     ],
     "foto_album": []
+  },
+    {
+    "id": 102,
+    "artista": "Scorpions",
+    "titolo_album": "Tokyo Tapes",
+    "genere": "Hard Rock / Heavy Metal",
+    "anno_uscita_originale": 1978,
+    "anno_stampa": 1978,
+    "anno_uscita_stampa": 1978,
+    "origine": "Italy (RCA S.p.A.)",
+    "etichetta": "RCA",
+    "catalog_number": "CL 28331",
+    "codice_matrice": "HKAY 32574",
+    "velocita": "33",
+    "colore": "Nero",
+    "grammatura": "Standard",
+    "inserti": "Gatefold, 2 LP",
+    "stato_disco": "10",
+    "stato_copertina": "10",
+    "note_stato": "Identificato da matrice HKAY 32574 (Lato A). Stampa Italiana.",
+    "stato_catalogo": "Eredità",
+    "cover": "",
+    "tracce": [
+      {"pos": "A1", "title": "All Night Long", "duration": "3:44"},
+      {"pos": "A2", "title": "Pictured Life", "duration": "3:12"},
+      {"pos": "A3", "title": "Backstage Queen", "duration": "3:44"},
+      {"pos": "A4", "title": "Polar Nights", "duration": "6:43"},
+      {"pos": "A5", "title": "In Trance", "duration": "5:25"},
+      {"pos": "B1", "title": "We'll Burn The Sky", "duration": "8:07"},
+      {"pos": "B2", "title": "Suspender Love", "duration": "3:38"},
+      {"pos": "B3", "title": "In Search Of The Peace Of Mind", "duration": "3:02"},
+      {"pos": "B4", "title": "Fly To The Rainbow", "duration": "9:39"},
+      {"pos": "C1", "title": "He's A Woman - She's A Man", "duration": "5:22"},
+      {"pos": "C2", "title": "Speedy's Coming", "duration": "3:40"},
+      {"pos": "C3", "title": "Top Of The Bill", "duration": "6:45"},
+      {"pos": "D1", "title": "Hound Dog", "duration": "1:14"},
+      {"pos": "D2", "title": "Long Tall Sally", "duration": "2:09"},
+      {"pos": "D3", "title": "Steamrock Fever", "duration": "3:41"},
+      {"pos": "D4", "title": "Dark Lady", "duration": "4:18"},
+      {"pos": "D5", "title": "Kojo No Tsuki", "duration": "3:35"},
+      {"pos": "D6", "title": "Robot Man", "duration": "5:47"}
+    ],
+    "foto_album": []
   }
 ]
