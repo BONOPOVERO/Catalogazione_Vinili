@@ -2038,7 +2038,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Finitura Argentata",
     "stato_catalogo": "Eredità",
-    "cover": "Img/The_Game.jpg",
+    "cover": "Img/The_Games.jpg",
     "tracce": [
       {"pos": "A1", "title": "Play The Game", "duration": "3:30"},
       {"pos": "A2", "title": "Dragon Attack", "duration": "4:18"},
