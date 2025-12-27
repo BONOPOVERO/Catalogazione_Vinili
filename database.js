@@ -2257,7 +2257,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Album di debutto",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_1.jpg",
+    "cover": "Img/Queen.png",
     "tracce": [
       {"pos": "A1", "title": "Keep Yourself Alive", "duration": "3:46"},
       {"pos": "A2", "title": "Doing All Right", "duration": "4:10"},
@@ -2292,7 +2292,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Side White / Side Black",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_2.jpg",
+    "cover": "Img/Queen_II.webp",
     "tracce": [
       {"pos": "A1", "title": "Procession", "duration": "1:12"},
       {"pos": "A2", "title": "Father To Son", "duration": "6:14"},
@@ -2375,7 +2375,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_The_Miracle.jpg",
+    "cover": "Img/The_Miracle.jpg",
     "tracce": [
       {"pos": "A1", "title": "Party", "duration": "2:24"},
       {"pos": "A2", "title": "Khashoggi's Ship", "duration": "2:47"},
@@ -2410,7 +2410,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Album postumo",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Made_In_Heaven.jpg",
+    "cover": "Img/Made_In_Heaven.jpg",
     "tracce": [
       {"pos": "A1", "title": "It's A Beautiful Day", "duration": "2:32"},
       {"pos": "A2", "title": "Made In Heaven", "duration": "5:25"},
@@ -2448,7 +2448,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Sheer_Heart_Attack.jpg",
+    "cover": "Img/Sheer_Heart_Attack.png",
     "tracce": [
       {"pos": "A1", "title": "Brighton Rock", "duration": "5:08"},
       {"pos": "A2", "title": "Killer Queen", "duration": "3:01"},
@@ -2486,7 +2486,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Edizione 2 LP",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Greatest_Hits_1.jpg",
+    "cover": "Img/Queen_Greatest_Hits_I.jpg",
     "tracce": [
       {"pos": "A1", "title": "Bohemian Rhapsody", "duration": "5:55"},
       {"pos": "A2", "title": "Another One Bites The Dust", "duration": "3:35"},
