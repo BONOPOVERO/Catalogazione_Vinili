@@ -2926,7 +2926,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Identificato da matrice HKAY 32574 (Lato A). Stampa Italiana.",
     "stato_catalogo": "Eredità",
-    "cover": "Tokyo_Tapes.jpg",
+    "cover": "Img/Tokyo_Tapes.jpg",
     "tracce": [
       {"pos": "A1", "title": "All Night Long", "duration": "3:44"},
       {"pos": "A2", "title": "Pictured Life", "duration": "3:12"},
