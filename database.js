@@ -1961,7 +1961,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Live_At_Rainbow_74.jpg",
+    "cover": "Img/Live_At_Rainbow_74.jpg",
     "tracce": [
       {"pos": "A1", "title": "Procession", "duration": "1:18"},
       {"pos": "A2", "title": "Now I'm Here", "duration": "4:57"},
@@ -2107,7 +2107,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Greatest_Hits_III.jpg",
+    "cover": "Img/Greatest_Hits_III.jpg",
     "tracce": [
       {"pos": "A1", "title": "The Show Must Go On (Queen + Elton John)", "duration": "4:35"},
       {"pos": "A2", "title": "Under Pressure (Rah Mix)", "duration": "4:08"},
@@ -2486,7 +2486,7 @@ DATABASE_VINILI = [
     "stato_copertina": "10",
     "note_stato": "Collezione DeAgostini, Edizione 2 LP",
     "stato_catalogo": "Eredità",
-    "cover": "Img/Queen_Greatest_Hits_I.jpg",
+    "cover": "Img/Greatest_Hits_I.jpg",
     "tracce": [
       {"pos": "A1", "title": "Bohemian Rhapsody", "duration": "5:55"},
       {"pos": "A2", "title": "Another One Bites The Dust", "duration": "3:35"},
