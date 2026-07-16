@@ -28,7 +28,6 @@ function setupSearch() {
     });
 }
 
-// ECCO LA FUNZIONE CHE SI ERA "ROTTA" NELLE RIGHE 89-94
 function renderVinyls(data) {
     const grid = document.getElementById("vinyl-grid");
     if (!grid) return;
@@ -39,14 +38,15 @@ function renderVinyls(data) {
         return;
     }
     
-    data.forEach(v, index) => {
+    // CORREZIONE 1: Aggiunte le parentesi per v, index
+    data.forEach((v, index) => {
         const card = document.createElement("div");
         card.className = "vinyl-card";
-       // Assegna un ID univoco all'animazione (usa il titolo ripulito o un indice)
-const uniqueId = (v.titolo_album || "album").replace(/[^a-zA-Z0-9]/g, "");
-card.style.viewTransitionName = `vinyl-${uniqueId}`;
+        
+        // CORREZIONE 2: Usiamo l'indice matematico per l'ID univoco
+        card.style.viewTransitionName = `vinyl-${index}`;
 
-card.onclick = () => {
+        card.onclick = () => {
             // Se è già espansa, apri la tua modale completa
             if (card.classList.contains('expanded')) {
                 window.openDetails(v);
@@ -63,25 +63,6 @@ card.onclick = () => {
             }
         };
 
-window.toggleExpansion = function(clickedCard) {
-    // 1. Riduci le altre card eventualmente aperte
-    document.querySelectorAll('.vinyl-card.expanded').forEach(card => {
-        if (card !== clickedCard) {
-            card.classList.remove('expanded');
-        }
-    });
-
-    // 2. Espandi o riduci la card cliccata
-    clickedCard.classList.toggle('expanded');
-    
-    // 3. Scorri la pagina per centrare il vinile sullo schermo
-    if (clickedCard.classList.contains('expanded')) {
-        setTimeout(() => {
-            clickedCard.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 50); // Piccolo ritardo per far calcolare il layout
-    }
-};
-        
         let statusClass = 'wishlist';
         const stato = (v.stato_catalogo || "").toLowerCase().trim();
 
@@ -261,4 +242,24 @@ window.filterVinyls = function(status) {
 
 window.onclick = (e) => { 
     if (e.target == document.getElementById("detail-modal")) window.closeDetails(); 
+};
+
+// CORREZIONE 3: La funzione toggleExpansion è stata spostata qui in fondo, fuori dal loop e da renderVinyls
+window.toggleExpansion = function(clickedCard) {
+    // 1. Riduci le altre card eventualmente aperte
+    document.querySelectorAll('.vinyl-card.expanded').forEach(card => {
+        if (card !== clickedCard) {
+            card.classList.remove('expanded');
+        }
+    });
+
+    // 2. Espandi o riduci la card cliccata
+    clickedCard.classList.toggle('expanded');
+    
+    // 3. Scorri la pagina per centrare il vinile sullo schermo
+    if (clickedCard.classList.contains('expanded')) {
+        setTimeout(() => {
+            clickedCard.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 50); // Piccolo ritardo per far calcolare il layout
+    }
 };
