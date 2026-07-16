@@ -3,6 +3,7 @@
  * Ottimizzato per Android & Arch Linux
  * Funzionalità aggiunte: Ricerca & Dettagli Completi
  */
+import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
 
 let currentPhotoIndex = 0;
 let albumPhotos = [];
