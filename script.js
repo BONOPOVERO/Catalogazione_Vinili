@@ -42,7 +42,26 @@ function renderVinyls(data) {
     data.forEach(v => {
         const card = document.createElement("div");
         card.className = "vinyl-card";
-        card.onclick = () => window.openDetails(v);
+       // Assegna un ID univoco all'animazione (usa il titolo ripulito o un indice)
+const uniqueId = (v.titolo_album || "album").replace(/[^a-zA-Z0-9]/g, "");
+card.style.viewTransitionName = `vinyl-${uniqueId}`;
+
+card.onclick = () => {
+    // Se è già espansa, apri la tua modale completa
+    if (card.classList.contains('expanded')) {
+        window.openDetails(v);
+        return;
+    }
+
+    // Altrimenti, innesca l'animazione di espansione
+    if (!document.startViewTransition) {
+        toggleExpansion(card);
+    } else {
+        document.startViewTransition(() => {
+            toggleExpansion(card);
+        });
+    }
+};
         
         let statusClass = 'wishlist';
         const stato = (v.stato_catalogo || "").toLowerCase().trim();
