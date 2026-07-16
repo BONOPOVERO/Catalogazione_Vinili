@@ -1,4 +1,4 @@
-DATABASE_VINILI = [
+export const DATABASE_VINILI = [
     {
         "id": 1,
         "artista": "Pink Floyd",
