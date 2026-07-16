@@ -271,10 +271,6 @@ window.filterVinyls = function(status) {
     const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => v.stato_catalogo.toLowerCase() === status.toLowerCase());
     renderVinyls(filtered);
 };
-    
-    const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => v.stato_catalogo.toLowerCase() === status.toLowerCase());
-    renderVinyls(filtered);
-};
 
 window.onclick = (e) => { 
     if (e.target == document.getElementById("detail-modal")) closeDetails(); 
