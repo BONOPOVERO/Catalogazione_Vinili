@@ -224,11 +224,11 @@ function openDetails(v) {
 
 // --- RESTO DELLE FUNZIONI (GALLERIA, CHIUSURA, FILTRI) INVARIATE ---
 
-function initGallery(photos) {
+window.initGallery = function(photos) {
     albumPhotos = photos;
     currentPhotoIndex = 0;
-    openGalleryPlayer();
-}
+    openGalleryPlayer(); // Questa può rimanere normale perché viene chiamata da dentro JS
+};
 
 function openGalleryPlayer() {
     let galleryModal = document.getElementById("gallery-modal");
@@ -255,21 +255,21 @@ function openGalleryPlayer() {
     galleryModal.style.display = "flex";
 }
 
-function changePhoto(step) {
+window.changePhoto = function(step) {
     currentPhotoIndex += step;
     if (currentPhotoIndex >= albumPhotos.length) currentPhotoIndex = 0;
     if (currentPhotoIndex < 0) currentPhotoIndex = albumPhotos.length - 1;
     document.getElementById("main-photo").src = albumPhotos[currentPhotoIndex];
     document.querySelector("#gallery-modal div:last-child").innerText = `FOTO ${currentPhotoIndex + 1} / ${albumPhotos.length}`;
-}
+};
 
-function toggleZoom(el) {
+window.toggleZoom = function(el) {
     el.style.transform = (el.style.transform === "scale(1.5)") ? "scale(1)" : "scale(1.5)";
-}
+};
 
-function closeDetails() { 
+window.closeDetails = function() { 
     document.getElementById("detail-modal").style.display = "none"; 
-}
+};
 
 function filterVinyls(status) {
     // Pulisce la barra di ricerca quando si usa un filtro categoria per evitare confusione
