@@ -3,6 +3,7 @@
  * Funzionalità aggiunte: Ricerca & Dettagli Completi
  */
 import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
+import { DATABASE_VINILI } from './database.js';
 
 let currentPhotoIndex = 0;
 let albumPhotos = [];
