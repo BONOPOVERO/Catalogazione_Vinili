@@ -271,9 +271,11 @@ window.closeDetails = function() {
     document.getElementById("detail-modal").style.display = "none"; 
 };
 
-function filterVinyls(status) {
-    // Pulisce la barra di ricerca quando si usa un filtro categoria per evitare confusione
+window.filterVinyls = function(status) {
     document.getElementById('search-input').value = "";
+    const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => v.stato_catalogo.toLowerCase() === status.toLowerCase());
+    renderVinyls(filtered);
+};
     
     const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => v.stato_catalogo.toLowerCase() === status.toLowerCase());
     renderVinyls(filtered);
