@@ -1,355 +1,128 @@
-/* ==========================================================================
-   STILI GENERALI (OTTIMIZZATI PER ARCH LINUX & ANDROID)
-   ========================================================================== */
-body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000000; /* Blu notte scuro */
-    color: #f8fafc;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.5;
-}
+import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
+import { DATABASE_VINILI } from './database.js';
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+let currentPhotoIndex = 0;
+let albumPhotos = [];
 
-h1 {
-    color: #fbbf24; /* Giallo vinile */
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-#user-info {
-    font-size: 0.85em;
-    color: #94a3b8;
-}
-
-/* ==========================================================================
-   BARRA DI RICERCA
-   ========================================================================== */
-.search-container {
-    margin: 20px auto;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-}
-
-#search-input {
-    width: 100%;
-    padding: 12px 20px;
-    background-color: #141424;
-    border: 1px solid #334155;
-    border-radius: 25px;
-    color: #f8fafc;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-}
-
-#search-input:focus {
-    border-color: #fbbf24;
-    box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
-    background-color: #1e1e2e;
-}
-
-#search-input::placeholder {
-    color: #64748b;
-}
-
-
-/* ==========================================================================
-   BARRA FILTRI
-   ========================================================================== */
-.filter-bar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.filter-bar button {
-    background: #323232;
-    color: white;
-    border: 1px solid #334155;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-bar button:hover {
-    background: #fbbf24;
-    color: #000;
-    border-color: #fbbf24;
-}
-
-/* ==========================================================================
-   GRIGLIA VINILI (RESPONSIVE)
-   ========================================================================== */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
-}
-
-.vinyl-card {
-    background: #141424;
-    border-radius: 12px;
-    padding: 12px;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #334155;
-}
-
-.vinyl-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    border-color: #fbbf24;
-}
-
-.vinyl-card img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.vinyl-card h3 {
-    font-size: 0.95em;
-    margin: 10px 0 5px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.vinyl-card p {
-    font-size: 0.8em;
-    color: #94a3b8;
-    margin: 0;
-}
-
-.status {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    font-size: 0.7em;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-    z-index: 2;
-    text-transform: uppercase;
-}
-.owned-personal { background: #10b981; color: white; } /* Verde */
-.owned-family { background: #3b82f6; color: white; }   /* Blu */
-.wishlist { background: #f59e0b; color: white; }      /* Arancione */
-
-/* ==========================================================================
-   ANIMAZIONE VINILE (MODALE) - EFFETTO REALISTICO CON RIFLESSI
-   ========================================================================== */
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.vinyl-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 0 auto 30px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.vinyl-disc {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    /* Base nera con solchi circolari finissimi */
-    background: #050505;
-    background-image: repeating-radial-gradient(
-        circle,
-        #111,
-        #111 1px,
-        #050505 2px
-    );
-    border-radius: 50%;
-    z-index: 1;
-    animation: spin 6s linear infinite; /* Leggermente più lento per eleganza */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-    overflow: hidden;
-}
-
-/* RIFLESSO DI LUCE CONICO (L'effetto "giradischi") */
-.vinyl-disc::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Crea i riflessi a "spicchio" che girano col disco */
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        rgba(255, 255, 255, 0.08) 40deg,
-        transparent 80deg,
-        transparent 180deg,
-        rgba(255, 255, 255, 0.08) 220deg,
-        transparent 260deg
-    );
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* Ombra interna per dare profondità al bordo del disco */
-.vinyl-disc::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
-    z-index: 3;
-    pointer-events: none;
-}
-
-/* Etichetta centrale (La tua copertina tonda) */
-.vinyl-label {
-    width: 85px; 
-    height: 85px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #000;
-    z-index: 5;
-    position: relative;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-/* Foro centrale (Spindle Hole) */
-.vinyl-label::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #18181b; 
-    border-radius: 50%;
-    box-shadow: inset 0 0 3px rgba(0,0,0,1);
-}
-
-/* Assicurati che nessuna immagine residua rompa il layout */
-.vinyl-cover-modal {
-    display: none; 
-}
-
-/* ==========================================================================
-   FINESTRA MODALE (DETTAGLI)
-   ========================================================================== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(8px);
-}
-
-.modal-content {
-    background-color: #18181b;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    border-radius: 16px;
-    position: relative;
-    overflow-y: auto;
-    border: 1px solid #27272a;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: #94a3b8;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.close:hover { color: #fbbf24; }
-
-/* Scrollbar personalizzata modale */
-.modal-content::-webkit-scrollbar { width: 6px; }
-.modal-content::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-
-/* Adattamenti Mobile (Android) */
-@media (max-width: 480px) {
-    body { padding: 10px; }
-    .vinyl-container { width: 200px; height: 200px; }
-    .vinyl-disc { width: 190px; height: 190px; }
-    .vinyl-label { width: 70px; height: 70px; }
-}
-
-
-/* Assicurati che la griglia supporti il riadattamento */
-.grid-container {
-    display: grid;
-    /* Adatta la larghezza minima alle tue esigenze (es. 150px o 200px) */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    align-items: start;
-}
-
-/* La card base */
-.vinyl-card {
-    contain: layout; /* Ottimizza le performance di ricalcolo */
-    transition: box-shadow 0.3s ease;
-}
-
-/* La card espansa: prende più colonne e righe */
-.vinyl-card.expanded {
-    grid-column: span 2; /* Su schermi grandi puoi mettere span 3 */
-    grid-row: span 2;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-    transform: scale(1.02); /* Leggero zoom per enfatizzare */
-    z-index: 10;
-}
-
-/* Regola l'immagine dentro la card espansa per farla crescere bene */
-.vinyl-card.expanded img {
-    height: auto;
-    max-height: 400px; /* Evita che diventi troppo gigante */
-    object-fit: contain;
-}
-
-/* Gestione Mobile: su schermi piccoli, espandi su tutta la larghezza */
-@media (max-width: 600px) {
-    .vinyl-card.expanded {
-        grid-column: span 1; /* Il mobile ha di solito 1 colonna, o 2 */
-        width: 100%;
+document.addEventListener("DOMContentLoaded", () => {
+    if (typeof DATABASE_VINILI !== 'undefined') {
+        renderVinyls(DATABASE_VINILI);
+        setupSearch(); 
     }
+});
+
+function setupSearch() {
+    const searchInput = document.getElementById('search-input');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = DATABASE_VINILI.filter(v => 
+            (v.titolo_album && v.titolo_album.toLowerCase().includes(term)) ||
+            (v.artista && v.artista.toLowerCase().includes(term)) ||
+            (v.genere && v.genere.toLowerCase().includes(term))
+        );
+        renderVinyls(filtered);
+    });
 }
+
+function renderVinyls(data) {
+    const grid = document.getElementById("vinyl-grid");
+    if (!grid) return;
+    grid.innerHTML = "";
+    
+    if (!data || data.length === 0) {
+        grid.innerHTML = `<p style="text-align:center; width:100%; color:#94a3b8;">Nessun vinile trovato.</p>`;
+        return;
+    }
+    
+    data.forEach((v, index) => {
+        const card = document.createElement("div");
+        card.className = "vinyl-card";
+        
+        // Assegnazione ID univoco per l'animazione basata sull'indice
+        card.style.viewTransitionName = `vinyl-${index}`;
+
+        card.onclick = () => {
+            // Se già espansa (sfera), apri il dettaglio modale
+            if (card.classList.contains('expanded')) {
+                window.openDetails(v);
+                return;
+            }
+
+            // Innesca l'animazione Source Field
+            if (!document.startViewTransition) {
+                window.toggleExpansion(card);
+            } else {
+                document.startViewTransition(() => {
+                    window.toggleExpansion(card);
+                });
+            }
+        };
+
+        const statusClass = (v.stato_catalogo || "").toLowerCase().includes('personale') ? 'owned-personal' : 'owned-family';
+        const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
+        const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
+
+        const titoloMisurato = prepare(v.titolo_album, 'bold 18px Arial');
+        const { height: calculatedHeight } = layout(titoloMisurato, 200, 22);
+
+        card.innerHTML = `
+            <span class="status ${statusClass}">${v.stato_catalogo}</span>
+            <div class="img-wrapper">
+                <img src="${v.cover}" alt="${v.titolo_album}" onerror="this.src='https://raw.githubusercontent.com/fedeify/Vinyl-Collection/master/img/placeholder.png'">
+                <span class="rpm-badge" style="background:${rpmColor}">${rpmType}</span>
+            </div>
+            <h3 style="height: ${calculatedHeight}px">${v.titolo_album}</h3>
+            <p>${v.artista}</p>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Logica di espansione a "Sfera"
+window.toggleExpansion = function(clickedCard) {
+    document.querySelectorAll('.vinyl-card.expanded').forEach(card => {
+        if (card !== clickedCard) card.classList.remove('expanded');
+    });
+    clickedCard.classList.toggle('expanded');
+};
+
+// --- Funzioni modali ---
+window.openDetails = function(v) {
+    const modal = document.getElementById("detail-modal");
+    // ... mantieni qui la tua logica esistente di generazione HTML modale ...
+    modal.style.display = "flex";
+};
+
+window.closeDetails = function() { 
+    document.getElementById("detail-modal").style.display = "none"; 
+};
+
+window.initGallery = function(photos) {
+    albumPhotos = photos;
+    currentPhotoIndex = 0;
+    window.openGalleryPlayer();
+};
+
+window.openGalleryPlayer = function() {
+    // ... mantieni qui la tua logica esistente ...
+};
+
+window.changePhoto = function(step) {
+    // ... mantieni qui la tua logica esistente ...
+};
+
+window.toggleZoom = function(el) {
+    el.style.transform = (el.style.transform === "scale(1.5)") ? "scale(1)" : "scale(1.5)";
+};
+
+window.filterVinyls = function(status) {
+    document.getElementById('search-input').value = "";
+    const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => (v.stato_catalogo || "").toLowerCase() === status.toLowerCase());
+    renderVinyls(filtered);
+};
+
+window.onclick = (e) => { 
+    if (e.target == document.getElementById("detail-modal")) window.closeDetails(); 
+};
