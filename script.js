@@ -63,6 +63,54 @@ function renderVinyls(data) {
         const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
         const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
 
+        // --- INIZIO INTEGRAZIONE PRETEXT ---
+        
+        // 1. Prepariamo il testo del titolo con il font che supponiamo usi la tua card (es. 18px Arial bold)
+        const titoloMisurato = prepare(v.titolo_album, 'bold 18px Arial');
+        
+        // 2. Calcoliamo l'altezza. 
+        // Supponiamo che la card sia larga circa 200px e l'altezza della riga (line-height) sia 22px
+        const { height: calculatedHeight } = layout(titoloMisurato, 200, 22);
+        
+        // --- FINE INTEGRAZIONE PRETEXT ---
+
+        // Nel template HTML, applichiamo l'altezza calcolata direttamente al tag <h3>
+        card.innerHTML = `
+            <span class="status ${statusClass}">${v.stato_catalogo}</span>
+            <div style="position: relative; display: block;">
+                <img src="${v.cover}" alt="${v.titolo_album}" onerror="this.src='https://raw.githubusercontent.com/fedeify/Vinyl-Collection/master/img/placeholder.png'">
+                <span style="position: absolute; bottom: 12px; right: 8px; background: ${rpmColor}; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.65em; font-weight: bold; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.5); z-index: 5;">
+                    ${rpmType}
+                </span>
+            </div>
+            <h3 style="height: ${calculatedHeight}px; margin: 10px 0 5px 0;">${v.titolo_album}</h3>
+            <p>${v.artista}</p>
+        `;
+        grid.appendChild(card);
+    });
+}
+    
+    data.forEach(v => {
+        const card = document.createElement("div");
+        card.className = "vinyl-card";
+        card.onclick = () => openDetails(v);
+        
+        let statusClass = 'wishlist'; // Default: Arancione
+        
+        // Pulisce la stringa da spazi e la rende minuscola per il confronto
+        const stato = (v.stato_catalogo || "").toLowerCase().trim();
+
+        if (stato === 'personale') {
+            statusClass = 'owned-personal'; // Verde
+        } 
+        // Aggiungiamo il controllo anche per "eredità" o "eredita"
+        else if (stato === 'posseduto' || stato === 'eredità' || stato === 'eredita') {
+            statusClass = 'owned-family';   // Blu
+        }
+
+        const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
+        const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
+
         card.innerHTML = `
             <span class="status ${statusClass}">${v.stato_catalogo}</span>
             <div style="position: relative; display: block;">
