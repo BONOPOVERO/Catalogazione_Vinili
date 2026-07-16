@@ -1,7 +1,3 @@
-/**
- * Ottimizzato per Android & Arch Linux
- * Funzionalità aggiunte: Ricerca & Dettagli Completi
- */
 import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
 import { DATABASE_VINILI } from './database.js';
 
@@ -11,11 +7,10 @@ let albumPhotos = [];
 document.addEventListener("DOMContentLoaded", () => {
     if (typeof DATABASE_VINILI !== 'undefined') {
         renderVinyls(DATABASE_VINILI);
-        setupSearch(); // Inizializza la ricerca
+        setupSearch(); 
     }
 });
 
-// FUNZIONE DI RICERCA
 function setupSearch() {
     const searchInput = document.getElementById('search-input');
     if (!searchInput) return;
@@ -33,12 +28,12 @@ function setupSearch() {
     });
 }
 
+// ECCO LA FUNZIONE CHE SI ERA "ROTTA" NELLE RIGHE 89-94
 function renderVinyls(data) {
     const grid = document.getElementById("vinyl-grid");
     if (!grid) return;
     grid.innerHTML = "";
     
-    // Controlla se i dati esistono e se l'array è vuoto
     if (!data || data.length === 0) {
         grid.innerHTML = `<p style="text-align:center; width:100%; color:#94a3b8;">Nessun vinile trovato.</p>`;
         return;
@@ -47,27 +42,21 @@ function renderVinyls(data) {
     data.forEach(v => {
         const card = document.createElement("div");
         card.className = "vinyl-card";
+        card.onclick = () => window.openDetails(v);
         
-        // Questo onclick funziona perfettamente qui dentro
-        card.onclick = () => openDetails(v);
-        
-        let statusClass = 'wishlist'; // Default: Arancione
-        
-        // Pulisce la stringa da spazi e la rende minuscola per il confronto
+        let statusClass = 'wishlist';
         const stato = (v.stato_catalogo || "").toLowerCase().trim();
 
         if (stato === 'personale') {
-            statusClass = 'owned-personal'; // Verde
-        } 
-        // Aggiungiamo il controllo anche per "eredità" o "eredita"
-        else if (stato === 'posseduto' || stato === 'eredità' || stato === 'eredita') {
-            statusClass = 'owned-family';   // Blu
+            statusClass = 'owned-personal';
+        } else if (stato === 'posseduto' || stato === 'eredità' || stato === 'eredita') {
+            statusClass = 'owned-family';
         }
 
         const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
         const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
 
-        // --- INTEGRAZIONE PRETEXT ---
+        // Pretext
         const titoloMisurato = prepare(v.titolo_album, 'bold 18px Arial');
         const { height: calculatedHeight } = layout(titoloMisurato, 200, 22);
 
@@ -85,49 +74,12 @@ function renderVinyls(data) {
         grid.appendChild(card);
     });
 }
-    
-    data.forEach(v => {
-        const card = document.createElement("div");
-        card.className = "vinyl-card";
-        card.onclick = () => openDetails(v);
-        
-        let statusClass = 'wishlist'; // Default: Arancione
-        
-        // Pulisce la stringa da spazi e la rende minuscola per il confronto
-        const stato = (v.stato_catalogo || "").toLowerCase().trim();
 
-        if (stato === 'personale') {
-            statusClass = 'owned-personal'; // Verde
-        } 
-        // Aggiungiamo il controllo anche per "eredità" o "eredita"
-        else if (stato === 'posseduto' || stato === 'eredità' || stato === 'eredita') {
-            statusClass = 'owned-family';   // Blu
-        }
-
-        const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
-        const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
-
-        card.innerHTML = `
-            <span class="status ${statusClass}">${v.stato_catalogo}</span>
-            <div style="position: relative; display: block;">
-                <img src="${v.cover}" alt="${v.titolo_album}" onerror="this.src='https://raw.githubusercontent.com/fedeify/Vinyl-Collection/master/img/placeholder.png'">
-                <span style="position: absolute; bottom: 12px; right: 8px; background: ${rpmColor}; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.65em; font-weight: bold; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.5); z-index: 5;">
-                    ${rpmType}
-                </span>
-            </div>
-            <h3>${v.titolo_album}</h3>
-            <p>${v.artista}</p>
-        `;
-        grid.appendChild(card);
-    });
-
-function openDetails(v) {
+window.openDetails = function(v) {
     const modal = document.getElementById("detail-modal");
     
-    // GESTIONE TRACCE
     let tracksHtml = "";
     if (v.tracce && v.tracce.length > 0) {
-        // Gestisce il caso in cui "tracce" sia una stringa "??"
         if (typeof v.tracce === 'string') {
              tracksHtml = `<p style="color:#64748b; font-style:italic;">Tracklist non disponibile o sconosciuta.</p>`;
         } else {
@@ -149,7 +101,6 @@ function openDetails(v) {
         }
     }
 
-    // Helper per mostrare campi o un trattino se vuoti/??
     const val = (value) => (value && value !== "??" && value !== "") ? `<span style="color:#fff">${value}</span>` : `<span style="color:#555">-</span>`;
 
     document.getElementById("modal-body").innerHTML = `
@@ -208,24 +159,22 @@ function openDetails(v) {
         </div>
 
         <div style="display:flex; gap:10px; margin-top:20px;">
-            <button onclick="closeDetails()" style="flex:1; padding:16px; border-radius:12px; background:#334155; color:#fff; font-weight:bold; border:none; cursor:pointer;">CHIUDI</button>
+            <button onclick="window.closeDetails()" style="flex:1; padding:16px; border-radius:12px; background:#334155; color:#fff; font-weight:bold; border:none; cursor:pointer;">CHIUDI</button>
             ${v.foto_album && v.foto_album.length > 0 ? 
-                `<button onclick='initGallery(${JSON.stringify(v.foto_album)})' style="flex:1; padding:16px; border-radius:12px; background:#fbbf24; color:#000; font-weight:bold; border:none; cursor:pointer;">FOTO (${v.foto_album.length})</button>` 
+                `<button onclick='window.initGallery(${JSON.stringify(v.foto_album)})' style="flex:1; padding:16px; border-radius:12px; background:#fbbf24; color:#000; font-weight:bold; border:none; cursor:pointer;">FOTO (${v.foto_album.length})</button>` 
                 : ''}
         </div>
     `;
     modal.style.display = "flex";
-}
-
-// --- RESTO DELLE FUNZIONI (GALLERIA, CHIUSURA, FILTRI) INVARIATE ---
+};
 
 window.initGallery = function(photos) {
     albumPhotos = photos;
     currentPhotoIndex = 0;
-    openGalleryPlayer(); // Questa può rimanere normale perché viene chiamata da dentro JS
+    window.openGalleryPlayer();
 };
 
-function openGalleryPlayer() {
+window.openGalleryPlayer = function() {
     let galleryModal = document.getElementById("gallery-modal");
     if (!galleryModal) {
         galleryModal = document.createElement("div");
@@ -239,16 +188,16 @@ function openGalleryPlayer() {
             <button onclick="document.getElementById('gallery-modal').style.display='none'" style="background:#fff; border:none; color:#000; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer;">CHIUDI</button>
         </div>
         <div style="display:flex; align-items:center; justify-content:center; width:100%; height:75%; position:relative;">
-            <button onclick="changePhoto(-1)" style="position:absolute; left:10px; background:rgba(255,255,255,0.1); border:none; color:white; font-size:2em; padding:15px; border-radius:50%; cursor:pointer; z-index:10;">❮</button>
-            <div id="photo-container" style="max-width:85%; max-height:100%; display:flex; justify-content:center; align-items:center; transition: transform 0.3s ease;" onclick="toggleZoom(this)">
+            <button onclick="window.changePhoto(-1)" style="position:absolute; left:10px; background:rgba(255,255,255,0.1); border:none; color:white; font-size:2em; padding:15px; border-radius:50%; cursor:pointer; z-index:10;">❮</button>
+            <div id="photo-container" style="max-width:85%; max-height:100%; display:flex; justify-content:center; align-items:center; transition: transform 0.3s ease;" onclick="window.toggleZoom(this)">
                 <img id="main-photo" src="${albumPhotos[currentPhotoIndex]}" style="max-width:100%; max-height:100%; border-radius:10px; object-fit: contain;">
             </div>
-            <button onclick="changePhoto(1)" style="position:absolute; right:10px; background:rgba(255,255,255,0.1); border:none; color:white; font-size:2em; padding:15px; border-radius:50%; cursor:pointer; z-index:10;">❯</button>
+            <button onclick="window.changePhoto(1)" style="position:absolute; right:10px; background:rgba(255,255,255,0.1); border:none; color:white; font-size:2em; padding:15px; border-radius:50%; cursor:pointer; z-index:10;">❯</button>
         </div>
         <div style="color:#fbbf24; margin-top:20px; font-weight:bold;">FOTO ${currentPhotoIndex + 1} / ${albumPhotos.length}</div>
     `;
     galleryModal.style.display = "flex";
-}
+};
 
 window.changePhoto = function(step) {
     currentPhotoIndex += step;
@@ -268,10 +217,10 @@ window.closeDetails = function() {
 
 window.filterVinyls = function(status) {
     document.getElementById('search-input').value = "";
-    const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => v.stato_catalogo.toLowerCase() === status.toLowerCase());
+    const filtered = (status === 'all') ? DATABASE_VINILI : DATABASE_VINILI.filter(v => (v.stato_catalogo || "").toLowerCase() === status.toLowerCase());
     renderVinyls(filtered);
 };
 
 window.onclick = (e) => { 
-    if (e.target == document.getElementById("detail-modal")) closeDetails(); 
+    if (e.target == document.getElementById("detail-modal")) window.closeDetails(); 
 };
