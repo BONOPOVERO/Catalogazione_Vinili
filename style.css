@@ -92,3 +92,10 @@ body:has(.vinyl-card.expanded)::before {
     border-radius: 12px;
     color: white;
 }
+
+
+@supports not (view-transition-name: auto) {
+    .vinyl-card {
+        transition: transform 0.3s ease;
+    }
+}
