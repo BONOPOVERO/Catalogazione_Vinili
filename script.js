@@ -47,21 +47,21 @@ const uniqueId = (v.titolo_album || "album").replace(/[^a-zA-Z0-9]/g, "");
 card.style.viewTransitionName = `vinyl-${uniqueId}`;
 
 card.onclick = () => {
-    // Se è già espansa, apri la tua modale completa
-    if (card.classList.contains('expanded')) {
-        window.openDetails(v);
-        return;
-    }
+            // Se è già espansa, apri la tua modale completa
+            if (card.classList.contains('expanded')) {
+                window.openDetails(v);
+                return;
+            }
 
-    // Altrimenti, innesca l'animazione di espansione
-    if (!document.startViewTransition) {
-        toggleExpansion(card);
-    } else {
-        document.startViewTransition(() => {
-            toggleExpansion(card);
-        });
-    }
-};
+            // Altrimenti, innesca l'animazione chiamando WINDOW.toggleExpansion
+            if (!document.startViewTransition) {
+                window.toggleExpansion(card);
+            } else {
+                document.startViewTransition(() => {
+                    window.toggleExpansion(card);
+                });
+            }
+        };
 
 window.toggleExpansion = function(clickedCard) {
     // 1. Riduci le altre card eventualmente aperte
