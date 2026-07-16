@@ -1,5 +1,4 @@
 /**
- * ARCHIVIO VINILI PRO - GEMINI PRO EDITION
  * Ottimizzato per Android & Arch Linux
  * Funzionalità aggiunte: Ricerca & Dettagli Completi
  */
