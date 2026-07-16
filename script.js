@@ -38,7 +38,8 @@ function renderVinyls(data) {
     if (!grid) return;
     grid.innerHTML = "";
     
-    if (data.length === 0) {
+    // Controlla se i dati esistono e se l'array è vuoto
+    if (!data || data.length === 0) {
         grid.innerHTML = `<p style="text-align:center; width:100%; color:#94a3b8;">Nessun vinile trovato.</p>`;
         return;
     }
@@ -46,6 +47,8 @@ function renderVinyls(data) {
     data.forEach(v => {
         const card = document.createElement("div");
         card.className = "vinyl-card";
+        
+        // Questo onclick funziona perfettamente qui dentro
         card.onclick = () => openDetails(v);
         
         let statusClass = 'wishlist'; // Default: Arancione
@@ -64,18 +67,10 @@ function renderVinyls(data) {
         const rpmType = v.velocita === "45" ? "45 RPM" : "33 RPM";
         const rpmColor = v.velocita === "45" ? "#ef4444" : "#3b82f6";
 
-        // --- INIZIO INTEGRAZIONE PRETEXT ---
-        
-        // 1. Prepariamo il testo del titolo con il font che supponiamo usi la tua card (es. 18px Arial bold)
+        // --- INTEGRAZIONE PRETEXT ---
         const titoloMisurato = prepare(v.titolo_album, 'bold 18px Arial');
-        
-        // 2. Calcoliamo l'altezza. 
-        // Supponiamo che la card sia larga circa 200px e l'altezza della riga (line-height) sia 22px
         const { height: calculatedHeight } = layout(titoloMisurato, 200, 22);
-        
-        // --- FINE INTEGRAZIONE PRETEXT ---
 
-        // Nel template HTML, applichiamo l'altezza calcolata direttamente al tag <h3>
         card.innerHTML = `
             <span class="status ${statusClass}">${v.stato_catalogo}</span>
             <div style="position: relative; display: block;">
