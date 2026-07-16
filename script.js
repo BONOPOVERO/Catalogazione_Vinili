@@ -62,6 +62,25 @@ card.onclick = () => {
         });
     }
 };
+
+window.toggleExpansion = function(clickedCard) {
+    // 1. Riduci le altre card eventualmente aperte
+    document.querySelectorAll('.vinyl-card.expanded').forEach(card => {
+        if (card !== clickedCard) {
+            card.classList.remove('expanded');
+        }
+    });
+
+    // 2. Espandi o riduci la card cliccata
+    clickedCard.classList.toggle('expanded');
+    
+    // 3. Scorri la pagina per centrare il vinile sullo schermo
+    if (clickedCard.classList.contains('expanded')) {
+        setTimeout(() => {
+            clickedCard.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 50); // Piccolo ritardo per far calcolare il layout
+    }
+};
         
         let statusClass = 'wishlist';
         const stato = (v.stato_catalogo || "").toLowerCase().trim();
