@@ -313,3 +313,43 @@ h1 {
     .vinyl-disc { width: 190px; height: 190px; }
     .vinyl-label { width: 70px; height: 70px; }
 }
+
+
+/* Assicurati che la griglia supporti il riadattamento */
+.grid-container {
+    display: grid;
+    /* Adatta la larghezza minima alle tue esigenze (es. 150px o 200px) */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+/* La card base */
+.vinyl-card {
+    contain: layout; /* Ottimizza le performance di ricalcolo */
+    transition: box-shadow 0.3s ease;
+}
+
+/* La card espansa: prende più colonne e righe */
+.vinyl-card.expanded {
+    grid-column: span 2; /* Su schermi grandi puoi mettere span 3 */
+    grid-row: span 2;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    transform: scale(1.02); /* Leggero zoom per enfatizzare */
+    z-index: 10;
+}
+
+/* Regola l'immagine dentro la card espansa per farla crescere bene */
+.vinyl-card.expanded img {
+    height: auto;
+    max-height: 400px; /* Evita che diventi troppo gigante */
+    object-fit: contain;
+}
+
+/* Gestione Mobile: su schermi piccoli, espandi su tutta la larghezza */
+@media (max-width: 600px) {
+    .vinyl-card.expanded {
+        grid-column: span 1; /* Il mobile ha di solito 1 colonna, o 2 */
+        width: 100%;
+    }
+}
