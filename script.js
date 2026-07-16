@@ -39,7 +39,7 @@ function renderVinyls(data) {
         return;
     }
     
-    data.forEach(v => {
+    data.forEach(v, index) => {
         const card = document.createElement("div");
         card.className = "vinyl-card";
        // Assegna un ID univoco all'animazione (usa il titolo ripulito o un indice)
