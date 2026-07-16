@@ -125,7 +125,6 @@ function renderVinyls(data) {
         `;
         grid.appendChild(card);
     });
-}
 
 function openDetails(v) {
     const modal = document.getElementById("detail-modal");
